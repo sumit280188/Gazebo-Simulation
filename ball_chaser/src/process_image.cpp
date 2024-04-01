@@ -16,9 +16,8 @@ void drive_robot(float lin_x, float ang_z)
     srv.request.linear_x = lin_x;
     srv.request.angular_z = ang_z;
 
-    // Call the safe_move service and pass the requested joint angles
-    if (!client.call(srv))
-        ROS_ERROR("Failed to call service");
+      if (!client.call(srv))
+        ROS_ERROR("Failed to call service DriveToTarget");
 
 }
 
@@ -36,13 +35,13 @@ void process_image_callback(const sensor_msgs::Image img)
             // Depending on the position of the white pixel, call the drive_robot function with appropriate velocities
             if (column < img.step / 3) {
                 // White pixel in the left third of the image
-                drive_robot(0.2, -2); // Turn left
+                drive_robot(0.5, -0.5); // Turn left
             } else if (column < 2 * img.step / 3) {
                 // White pixel in the middle third of the image
-                drive_robot(0.2, 0.0); // Move forward
+                drive_robot(0.5, 0.0); // Move forward
             } else {
                 // White pixel in the right third of the image
-                drive_robot(0.2, 2); // Turn right
+                drive_robot(0.5, 0.5); // Turn right
             }
             break; // Break out of the loop after detecting the first white pixel
         }
