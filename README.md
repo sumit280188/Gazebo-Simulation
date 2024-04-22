@@ -6,12 +6,11 @@ Move the ball, and as long as the robot's camera can see the white ball, it will
 
 ## Setup Instructions:
 
-### Build your ROS package:
+### git clone https://github.com/sumit280188/Gazebo-Simulation.git
 
 
 
 ```bash
-Open a terminal:
 cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
