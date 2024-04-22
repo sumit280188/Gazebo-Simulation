@@ -1,4 +1,4 @@
-# BIM-ROS Integration Example
+# Gazebo simulation
 
 This is a Gazebo simulation for a 4-wheeled robot that follows a white ball kept on a simulated house floor.
 
@@ -6,11 +6,12 @@ Move the ball, and as long as the robot's camera can see the white ball, it will
 
 ## Setup Instructions:
 
-### 1. Build your ROS package:
+### Build your ROS package:
 
-Open a terminal:
+
 
 ```bash
+Open a terminal:
 cd ~/catkin_ws/
 catkin_make
 source devel/setup.bash
