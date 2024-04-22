@@ -3,9 +3,9 @@ This is a Gazebo-simulation for a 4-wheeled robot that follows a white ball kept
 open a terminal:
 catkin_make your package
 
-cd ~/catkin_ws/
-source devel/setup.bash
-roslaunch my_robot world.launch
+##cd ~/catkin_ws/
+##source devel/setup.bash
+##roslaunch my_robot world.launch
 
 In another terminal:
 cd ~/catkin_ws/
