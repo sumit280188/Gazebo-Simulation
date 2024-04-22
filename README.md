@@ -1,19 +1,27 @@
-This is a Gazebo-simulation for a 4-wheeled robot that follows a white ball kept on a simulated house floor, move the ball and, as long as the robot's camera can see the white ball, it will follow along.
+# BIM-ROS Integration Example
 
-open a terminal:
-catkin_make your package
+This is a Gazebo simulation for a 4-wheeled robot that follows a white ball kept on a simulated house floor.
 
-#cd ~/catkin_ws/
-##source devel/setup.bash
-##roslaunch my_robot world.launch
+Move the ball, and as long as the robot's camera can see the white ball, it will follow along.
 
-In another terminal:
+## Setup Instructions:
+
+### 1. Build your ROS package:
+
+Open a terminal:
+
+```bash
+cd ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+roslaunch my_robot world.launch
+
+Open another terminal:
 cd ~/catkin_ws/
 source devel/setup.bash
 roslaunch ball_chaser ball_chaser.launch
 
-To see the camera's raw images:
-In another terminal:
+Open yet another terminal:
 cd ~/catkin_ws/
 source devel/setup.bash
 rosrun rqt_image_view rqt_image_view
