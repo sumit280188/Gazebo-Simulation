@@ -15,6 +15,7 @@
 
 		<param name="initial_pose_x" value="0.0"/>
 		<param name="initial_pose_y" value="0.0"/>
+		<param name="initial_pose_a" value="-1.5708"/>
 	</node>
 	
 	<node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
@@ -23,13 +24,16 @@
 
 		<param name="base_global_planner" value="navfn/NavfnROS" />
  		<param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS"/>
-	</node>
 
  		<rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="global_costmap" />
   		<rosparam file="$(find my_robot)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
   		<rosparam file="$(find my_robot)/config/local_costmap_params.yaml" command="load" />
   		<rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load" />
   		<rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
+
+	</node>
+
+
   	
 	
 
