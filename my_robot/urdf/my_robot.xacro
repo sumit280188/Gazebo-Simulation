@@ -10,7 +10,7 @@
   </joint>
 
   <link name='chassis'>
-    <pose>0 0 0.1 0 0 0</pose>
+    <pose>0 0 0.1075 0 0 0</pose>
 
     <inertial>
       <mass value="15.0"/>
@@ -38,7 +38,7 @@
   </link>
     
   <link name='rear_left_wheel'>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0.1075 0 0 0</pose>
 
       <inertial>
         <mass value="5.0"/>
@@ -66,7 +66,7 @@
   </link>
     
   <joint type="continuous" name="rear_left_wheel_hinge">
-      <origin xyz="-0.125 -0.15 0" rpy="0 0 0"/>
+      <origin xyz="-0.126 -0.126 0" rpy="0 0 0"/>
       <child link="rear_left_wheel"/>
       <parent link="chassis"/>
       <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -75,7 +75,7 @@
   </joint>
     
   <link name='front_left_wheel'>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0.1075 0 0 0</pose>
 
       <inertial>
         <mass value="5.0"/>
@@ -103,7 +103,7 @@
   </link>
     
     <joint type="continuous" name="front_left_wheel_hinge">
-      <origin xyz="0.125 -0.15 0" rpy="0 0 0"/>
+      <origin xyz="0.126 -0.126 0" rpy="0 0 0"/>
       <child link="front_left_wheel"/>
       <parent link="chassis"/>
       <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -112,7 +112,7 @@
     </joint>
     
   <link name='rear_right_wheel'>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0.1075 0 0 0</pose>
 
       <inertial>
         <mass value="5.0"/>
@@ -140,7 +140,7 @@
   </link>
     
     <joint type="continuous" name="rear_right_wheel_hinge">
-      <origin xyz="-0.125 0.15 0" rpy="0 0 0"/>
+      <origin xyz="-0.126 0.126 0" rpy="0 0 0"/>
       <child link="rear_right_wheel"/>
       <parent link="chassis"/>
       <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -149,7 +149,7 @@
     </joint>
     
   <link name='front_right_wheel'>
-      <pose>0 0 0.1 0 0 0</pose>
+      <pose>0 0 0.1075 0 0 0</pose>
 
       <inertial>
         <mass value="5.0"/>
@@ -177,7 +177,7 @@
   </link>
     
     <joint type="continuous" name="front_right_wheel_hinge">
-      <origin xyz="0.125 0.15 0" rpy="0 0 0"/>
+      <origin xyz="0.126 0.126 0" rpy="0 0 0"/>
       <child link="front_right_wheel"/>
       <parent link="chassis"/>
       <axis xyz="0 1 0" rpy="0 0 0"/>
@@ -271,6 +271,17 @@
     <child link="hokuyo"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
-  </joint>  
+  </joint>
+
+  <link name="camera_link_optical">
+  </link> 
+
+  <joint name="camera_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.5707 0 -1.5707"/>
+    <parent link="camera"/>
+    <child link="camera_link_optical"/>
+  </joint>
+
+ 
 
 </robot>
